@@ -1,0 +1,46 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: course-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nextacademy_users
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      platform: postgres
+
+
+info:
+  app:
+    name: "course-service"
+    description: "Course Service for NextAcademy Project"
+    version: "1.0.0"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:   #to enable shutdown endpoint in actuator to let the application gracefully shutdown and deregister from eureka
+      access: "unrestricted"
+  info:
+    env:
+      enabled: true
+
+jwt:
+  secret: akljfabjnjlnfonafjdnfljsnsvskvlfd
+  expiration-ms: 86400000 # 24 hours
