@@ -1,23 +1,6 @@
 spring:
   application:
     name: user-service
-  datasource:
-    url: jdbc:postgresql://localhost:5432/nextacademy_users
-    username: postgres
-    password: admin
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-    defer-datasource-initialization: true
-  sql:
-    init:
-      mode: always
-      platform: postgres
 
   kafka:
     bootstrap-servers: localhost:9092
