@@ -1,0 +1,6 @@
+user-service:
+  message: "Hello from user-service dev"
+  contactDetails:
+    name: "Sundeep DEV"
+    email: "sundeep@in.com"
+    phone: "123456789"
